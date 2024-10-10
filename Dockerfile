@@ -8,6 +8,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application contents
 COPY service/ ./service/
 
+# Set environment variable for the link
+ENV ACCOUNTS_SERVICE_URL="https://accounts-sn-labs-piyushwaghul.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud/"
+
 # Switch to a non-root user
 RUN useradd --uid 1000 theia && chown -R theia /app
 USER theia
